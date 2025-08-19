@@ -1,0 +1,25 @@
+# Prediction interface
+build:
+  # Base image with CUDA support
+  gpu: true
+  cuda: "11.8"
+  python_version: "3.11"
+  
+  # System packages
+  system_packages:
+    - "libgl1-mesa-glx"
+    - "libglib2.0-0"
+    - "libsm6"
+    - "libxext6"
+    - "libxrender-dev"
+    - "libgomp1"
+  
+  # Python packages
+  python_packages:
+    - "torch>=2.0.0"
+    - "torchvision>=0.15.0"
+    - "Pillow>=9.0.0"
+    - "numpy>=1.21.0"
+
+# Prediction configuration
+predict: "predict.py:Predictor"
